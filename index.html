@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<title>The Learning Academy Gilgit | Sports Management Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">TLA<span></span></div>
+      <div><strong>The Learning Academy Gilgit</strong><small>Sports Management Office</small></div>
+      <button class="icon-btn mobile-close" id="closeSidebar" aria-label="Close menu">×</button>
+    </div>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav class="nav-list" id="mainNav">
+      <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span>Dashboard</button>
+      <button class="nav-item" data-page="teams"><span class="nav-icon">◈</span>Teams</button>
+      <button class="nav-item" data-page="players"><span class="nav-icon">◎</span>Players</button>
+      <button class="nav-item" data-page="rankings"><span class="nav-icon">↗</span>Team Rankings</button>
+      <button class="nav-item" data-page="points"><span class="nav-icon">✳</span>Points Table</button>
+      <button class="nav-item" data-page="matches"><span class="nav-icon">◷</span>Live & Scheduled</button>
+      <button class="nav-item" data-page="results"><span class="nav-icon">✓</span>Past Results</button>
+      <button class="nav-item" data-page="notices"><span class="nav-icon">▤</span>Notice Board</button>
+      <button class="nav-item" data-page="csv"><span class="nav-icon">⇩</span>Players CSV</button>
+      <button class="nav-item" data-page="developers"><span class="nav-icon">⌘</span>Developers</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="season-card"><span class="season-dot"></span><div><b>Sports Season</b><small id="seasonLabel">2026 · School League</small></div></div>
+      <button class="admin-shortcut" id="adminShortcut"><span>⚙</span> Admin workspace <span class="arrow">↗</span></button>
+      <div class="sidebar-foot">Built for teamwork.<br><span>Version 1.0 TLA Gilgit</span></div>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <div class="breadcrumb"><span>Sports Office</span><b>/</b><strong id="currentPageName">Dashboard</strong></div>
+      <div class="top-actions">
+        <div class="system-status"><span class="pulse"></span><span>System ready</span></div>
+        <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">🌟</button>
+        <button class="admin-top" id="adminTop"><span class="admin-avatar">AP</span><span><b id="adminStatus">Admin access</b><small id="adminSub">Sign in to manage</small></span><span class="chevron">⌄</span></button>
+      </div>
+    </header>
+
+    <div class="content-wrap">
+      <section class="page active" id="page-dashboard">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> SCHOOL SPORTS MANAGEMENT</div>
+            <h1>Play with purpose.<br><span>Lead with pride.</span></h1>
+            <p>Your central hub for school teams, player rosters, fixtures, results and championship points — all in one place.</p>
+            <div class="hero-actions"><button class="btn btn-primary" data-go="matches">Explore fixtures <span>↗</span></button><button class="btn btn-ghost" data-go="rankings">View rankings <span>→</span></button></div>
+            <div class="hero-meta"><div class="meta-avatars"><i>Z</i><i>T</i><i>+</i></div><span>One school. Many teams. One community.</span></div>
+          </div>
+          <div class="hero-visual">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-ball">TLA<span>SPORTS</span></div>
+            <div class="float-card float-top"><span class="float-icon">↗</span><div><small>Competition</small><b>School League</b></div></div>
+            <div class="float-card float-bottom"><span class="live-dot"></span><div><small>League status</small><b id="heroMatchStatus">Ready for kickoff</b></div></div>
+            <div class="hero-grid"></div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><span class="kicker">AT A GLANCE</span><h2>Season overview</h2></div><span class="updated-label"><span class="pulse"></span> Updated from this device</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">Registered teams</span><span class="stat-icon blue">◈</span></div><div class="stat-number" id="statTeams">0</div><div class="stat-foot"><span class="trend neutral">League</span><span>active roster groups</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">Players registered</span><span class="stat-icon cyan">◎</span></div><div class="stat-number" id="statPlayers">0</div><div class="stat-foot"><span class="trend neutral">Players</span><span>across all teams</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">Scheduled matches</span><span class="stat-icon violet">◷</span></div><div class="stat-number" id="statScheduled">0</div><div class="stat-foot"><span class="trend neutral">Fixtures</span><span>upcoming games</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">Completed matches</span><span class="stat-icon green">✓</span></div><div class="stat-number" id="statCompleted">0</div><div class="stat-foot"><span class="trend neutral">Results</span><span>recorded matches</span></div></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel panel-large"><div class="panel-head"><div><span class="kicker">ON THE CALENDAR</span><h3>Upcoming fixtures</h3></div><button class="text-link" data-go="matches">All fixtures <span>→</span></button></div><div id="dashboardFixtures" class="fixture-list"></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="kicker">LATEST UPDATES</span><h3>Notice board</h3></div><button class="text-link" data-go="notices">View all <span>→</span></button></div><div id="dashboardNotices" class="notice-mini-list"></div></article>
+        </div>
+        <div class="bottom-banner"><div class="banner-mark">TLA<span></span></div><div><b>Every point tells a story.</b><p>Celebrate commitment, fair play and the spirit of school sport.</p></div><button class="btn btn-outline" data-go="points">Open points table <span>→</span></button></div>
+      </section>
+
+      <section class="page" id="page-teams">
+        <div class="page-title-row"><div><span class="kicker">THE ROSTER</span><h1>Teams</h1><p>Browse school teams and their current league standings.</p></div><button class="btn btn-primary admin-required" data-open-admin="team">+ Add team</button></div>
+        <div class="toolbar"><label class="searchbox"><span>⌕</span><input id="teamSearch" placeholder="Search teams..." /></label><select id="teamFilter" class="select"><option value="all">All categories</option><option>Football</option><option>Cricket</option><option>Volleyball</option><option>Basketball</option><option>Other</option></select></div>
+        <div id="teamsGrid" class="teams-grid"></div>
+      </section>
+
+      <section class="page" id="page-players">
+        <div class="page-title-row"><div><span class="kicker">ATHLETE DIRECTORY</span><h1>Players</h1><p>Find registered athletes by name, team or jersey number.</p></div><button class="btn btn-primary admin-required" data-open-admin="player">+ Add player</button></div>
+        <div class="toolbar"><label class="searchbox"><span>⌕</span><input id="playerSearch" placeholder="Search players..." /></label><select id="playerTeamFilter" class="select"><option value="all">All teams</option></select></div>
+        <div class="table-panel"><div class="table-scroll"><table><thead><tr><th>PLAYER</th><th>TEAM</th><th>JERSEY</th><th>GRADE</th><th>POSITION / ROLE</th><th class="admin-col">ACTIONS</th></tr></thead><tbody id="playersTable"></tbody></table></div><div class="table-foot"><span id="playerCount">0 players</span><span>Player directory</span></div></div>
+      </section>
+
+      <section class="page" id="page-rankings">
+        <div class="page-title-row"><div><span class="kicker">THE LEADERBOARD</span><h1>Team rankings</h1><p>See how teams are performing across the school league.</p></div><button class="btn btn-outline" data-go="points">View points breakdown <span>→</span></button></div>
+        <div class="ranking-spotlight" id="rankingSpotlight"></div>
+        <div class="table-panel"><div class="panel-head inset"><div><span class="kicker">OFFICIAL STANDINGS</span><h3>League table</h3></div><span class="small-muted">Sorted by total points</span></div><div class="table-scroll"><table><thead><tr><th>RANK</th><th>TEAM</th><th>PLAYED</th><th>W</th><th>D</th><th>L</th><th>POINTS</th></tr></thead><tbody id="rankingsTable"></tbody></table></div></div>
+      </section>
+
+      <section class="page" id="page-points">
+        <div class="page-title-row"><div><span class="kicker">LEAGUE SCOREBOARD</span><h1>Points table</h1><p>Points and match outcomes are calculated from recorded results.</p></div><button class="btn btn-outline" data-go="results">Review results <span>→</span></button></div>
+        <div class="points-rule-grid"><div class="rule-card"><span class="rule-num">03</span><div><b>Win</b><small>Points awarded for a win</small></div></div><div class="rule-card"><span class="rule-num">01</span><div><b>Draw</b><small>Points awarded to each team</small></div></div><div class="rule-card"><span class="rule-num">00</span><div><b>Loss</b><small>No league points awarded</small></div></div></div>
+        <div class="table-panel"><div class="panel-head inset"><div><span class="kicker">LIVE CALCULATION</span><h3>Current points</h3></div><span class="calculated-tag">Calculated from results</span></div><div class="table-scroll"><table><thead><tr><th>POSITION</th><th>TEAM</th><th>PLAYED</th><th>WON</th><th>DRAWN</th><th>LOST</th><th>POINTS</th></tr></thead><tbody id="pointsTable"></tbody></table></div></div>
+      </section>
+
+      <section class="page" id="page-matches">
+        <div class="page-title-row"><div><span class="kicker">MATCH CENTRE</span><h1>Live & scheduled</h1><p>Follow active fixtures and review what's coming up next.</p></div><button class="btn btn-primary admin-required" data-open-admin="match">+ Schedule match</button></div>
+        <div class="match-tabs"><button class="match-tab active" data-match-filter="all">All fixtures <span id="allMatchCount">0</span></button><button class="match-tab" data-match-filter="live">Live now <span id="liveMatchCount">0</span></button><button class="match-tab" data-match-filter="scheduled">Scheduled <span id="scheduledMatchCount">0</span></button></div>
+        <div id="matchesGrid" class="matches-grid"></div>
+      </section>
+
+      <section class="page" id="page-results">
+        <div class="page-title-row"><div><span class="kicker">FINAL WHISTLE</span><h1>Past results</h1><p>Verified scorelines and match history for the school league.</p></div><button class="btn btn-outline" data-go="rankings">League rankings <span>→</span></button></div>
+        <div id="resultsGrid" class="results-grid"></div>
+      </section>
+
+      <section class="page" id="page-notices">
+        <div class="page-title-row"><div><span class="kicker">OFFICIAL UPDATES</span><h1>Notice board</h1><p>Announcements, fixture updates and important school sports information.</p></div><button class="btn btn-primary admin-required" data-open-admin="notice">+ Publish notice</button></div>
+        <div id="noticesGrid" class="notices-grid"></div>
+      </section>
+
+      <section class="page" id="page-csv">
+        <div class="page-title-row"><div><span class="kicker">DATA TOOLS</span><h1>Players CSV</h1><p>Export the player directory for reports, attendance sheets or record keeping.</p></div><button class="btn btn-primary" id="exportCsv">Export CSV <span>↓</span></button></div>
+        <div class="export-card"><div class="export-icon">⇩</div><div><h3>Export your player register</h3><p>Creates a CSV file from the player records saved in this browser. Open it in Excel, Google Sheets or any spreadsheet app.</p><div class="export-details"><span><i></i> UTF-8 compatible</span><span><i></i> Spreadsheet-ready</span><span><i></i> Current saved records</span></div></div></div>
+        <div class="table-panel"><div class="panel-head inset"><div><span class="kicker">EXPORT PREVIEW</span><h3>Player records</h3></div><span class="small-muted" id="csvPreviewCount">0 records</span></div><div class="table-scroll"><table><thead><tr><th>NAME</th><th>TEAM</th><th>JERSEY</th><th>GRADE</th><th>ROLE</th></tr></thead><tbody id="csvPreview"></tbody></table></div></div>
+      </section>
+
+      <section class="page" id="page-developers">
+        <div class="developers-hero"><span class="kicker">THE PEOPLE BEHIND THE PLATFORM</span><h1>Built by students.<br><span>Designed for champions.</span></h1><p>A student-led project for making school sports more organised, transparent and exciting.</p></div>
+        <div class="section-heading"><div><span class="kicker">PROJECT TEAM</span><h2>Meet the developers</h2></div><span class="updated-label">The Learning Academy Gilgit</span></div>
+        <div id="developersGrid" class="developers-grid"></div>
+      </section>
+    </div>
+    <footer class="footer"><div><span class="footer-mark">TLA</span> <span>The Learning Academy Gilgit Sports Management Site</span></div><span>Built for Sports Week</span></footer>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="adminModal">
+  <div class="modal admin-modal">
+    <button class="modal-close" data-close-modal aria-label="Close">×</button>
+    <div class="modal-brand">TLA<span></span> ADMIN</div>
+    <div id="adminLoginView">
+      <span class="kicker">RESTRICTED WORKSPACE</span><h2>Admin sign in</h2><p class="modal-sub">Sign in to manage teams, players, points, fixtures and announcements.</p>
+      <form id="adminLoginForm"><label class="field-label">Admin password</label><input id="adminPassword" class="field-input" type="password" placeholder="Enter admin password" autocomplete="current-password" required><div class="form-error" id="loginError"></div><button class="btn btn-primary full-width" type="submit">Unlock admin workspace <span>→</span></button></form>
+      <div class="security-note">Use correct password to access admin panel and to manage the site settings. Don't try incorrect passwords. </div>
+    </div>
+    <div id="adminPanelView" hidden>
+      <span class="kicker">CONTROL CENTRE</span><h2>Admin workspace</h2><p class="modal-sub">Manage your sports site from one place.</p>
+      <div class="admin-tools-grid">
+        <button class="admin-tool" data-admin-action="team"><span>◈</span><b>Add team</b><small>Create a team profile</small></button>
+        <button class="admin-tool" data-admin-action="player"><span>◎</span><b>Add player</b><small>Register an athlete</small></button>
+        <button class="admin-tool" data-admin-action="match"><span>◷</span><b>Schedule match</b><small>Manage fixtures and scores</small></button>
+        <button class="admin-tool" data-admin-action="notice"><span>▤</span><b>Publish notice</b><small>Share an announcement</small></button>
+        <button class="admin-tool" data-admin-action="points"><span>✳</span><b>Adjust points</b><small>Manual bonus or deduction</small></button>
+        <button class="admin-tool danger-tool" data-admin-action="reset"><span>↺</span><b>Reset demo data</b><small>Clear all saved records</small></button>
+      </div>
+      <div class="admin-modal-bottom"><span class="admin-signed"><span class="pulse"></span> Admin session active</span><button class="btn btn-outline btn-small" id="adminLogout">Sign out</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="formModal">
+  <div class="modal form-modal">
+    <button class="modal-close" data-close-modal aria-label="Close">×</button>
+    <span class="kicker" id="formKicker">ADMIN ACTION</span><h2 id="formTitle">Add record</h2><p class="modal-sub" id="formDescription">Add information to the sports management site.</p>
+    <form id="recordForm"><div id="formFields" class="form-fields"></div><div class="form-actions"><button class="btn btn-outline" type="button" data-close-modal>Cancel</button><button class="btn btn-primary" type="submit">Save changes <span>→</span></button></div></form>
+  </div>
+</div>
+<div class="toast-region" id="toastRegion" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
